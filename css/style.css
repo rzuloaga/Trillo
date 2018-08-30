@@ -28,7 +28,8 @@ Grey dark 3: #999
   --color-grey-dark-3: #999;
   --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .06);
-  --line: 1px solid var(--color-grey-light-2); }
+  --line: 1px solid var(--color-grey-light-2);
+  --bg-gradient: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark)); }
 
 *,
 *::before,
@@ -46,7 +47,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--color-grey-dark-2);
-  background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+  background-image: var(--bg-gradient);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -394,3 +395,45 @@ button {
     font-size: 2.2rem;
     color: var(--color-primary);
     font-weight: 300; }
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center; }
+  .cta__book-now {
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem; }
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: background-image .2s;
+  backface-visibility: hidden; }
+  .btn:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark)); }
+  .btn:focus {
+    animation: pulsate 1s infinite; }
+  .btn:hover .btn__visible {
+    transform: translateY(100%); }
+  .btn:hover .btn__invisible {
+    top: 0; }
+  .btn > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all .2s;
+    backface-visibility: hidden; }
+  .btn__visible {
+    padding: 2rem 7.5rem; }
+  .btn__invisible {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    padding: 2rem 0; }
