@@ -146,17 +146,18 @@
             height: 1rem;
 
             // OLDER-BROWSERS
-            // @supports(mask: 0) {
-            //     background-image: url(/img/chevron-thin-right.svg);
-            //     background-size: color;
-            // }
-
+            background-image: url(/img/chevron-thin-right.svg);
+            background-size: cover;
+            
             // NEWER BROWSERS
-            background-color: var(--color-primary);
-            mask-image: url(/img/chevron-thin-right.svg);
-            -webkit-mask-image: url(/img/chevron-thin-right.svg);
-            mask-size: cover;
-            -webkit-mask-size: cover;
+            @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+                background-color: var(--color-primary);
+                mask-image: url(/img/chevron-thin-right.svg);
+                -webkit-mask-image: url(/img/chevron-thin-right.svg);
+                mask-size: cover;
+                -webkit-mask-size: cover;
+                background-image: none;
+            }
         }
     }
 }
