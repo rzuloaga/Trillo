@@ -9,6 +9,10 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 1rem = 10px
+
+    @media only screen and(max-width: $bp-large) {
+        font-size: 50%; // 1rem = 8px
+    }
 }
 
 body {
@@ -21,6 +25,10 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
     padding: 8rem 0;
+
+    @media only screen and(max-width: $bp-largest) {
+        padding: 0;
+    }
 }
 
 ul {
